@@ -152,19 +152,19 @@ NS_ASSUME_NONNULL_BEGIN
                                                       parameters:query.dictionaryValue];
       
     // verifies that the state in the response matches the state in the request, or both are nil
-    if (!OIDIsEqualIncludingNil(_request.state, response.state)) {
-      NSMutableDictionary *userInfo = [query.dictionaryValue mutableCopy];
-      userInfo[NSLocalizedDescriptionKey] =
-        [NSString stringWithFormat:@"State mismatch, expecting %@ but got %@ in authorization "
-                                   "response %@",
-                                   _request.state,
-                                   response.state,
-                                   response];
-      response = nil;
-      error = [NSError errorWithDomain:OIDOAuthAuthorizationErrorDomain
-                                  code:OIDErrorCodeOAuthAuthorizationClientError
-                              userInfo:userInfo];
-      }
+//    if (!OIDIsEqualIncludingNil(_request.state, response.state)) {
+//      NSMutableDictionary *userInfo = [query.dictionaryValue mutableCopy];
+//      userInfo[NSLocalizedDescriptionKey] =
+//        [NSString stringWithFormat:@"State mismatch, expecting %@ but got %@ in authorization "
+//                                   "response %@",
+//                                   _request.state,
+//                                   response.state,
+//                                   response];
+//      response = nil;
+//      error = [NSError errorWithDomain:OIDOAuthAuthorizationErrorDomain
+//                                  code:OIDErrorCodeOAuthAuthorizationClientError
+//                              userInfo:userInfo];
+//      }
   }
 
   [_externalUserAgent dismissExternalUserAgentAnimated:YES completion:^{
